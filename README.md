@@ -39,7 +39,7 @@ Before running this project, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/harshit7728/fuelOptimizer_spotter.git
+git clone https://github.com/harshit7728/fuel_optimizer.git
 cd project-name
 ```
 
