@@ -131,27 +131,6 @@ class RouteService:
             'total_fuel_cost': round(total_cost, 2)
         }
     
-    def _get_state_from_coords(self, lon, lat):
-        """Reverse geocode coordinates to get state."""
-        try:
-            url = f"{self.BASE_URL}/geocode/reverse"
-            params = {
-                'api_key': self.api_key,
-                'point.lon': lon,
-                'point.lat': lat,
-                'size': 1
-            }
-            response = requests.get(url, params=params, timeout=3)
-            response.raise_for_status()
-            data = response.json()
-            
-            if data['features']:
-                return data['features'][0]['properties'].get('region_a', 'US')
-        except:
-            pass
-        
-        return 'US'
-    
     def plan_route(self, start, finish):
         """Main method to plan route with fuel stops."""
         # Geocode locations
